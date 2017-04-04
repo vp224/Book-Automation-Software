@@ -1,0 +1,213 @@
+Testsuite: Databases.EmployeeDatabaseTest
+
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.309 sec
+
+------------- Standard Output ---------------
+++++isEmployee+++++
+
+Executing query: SELECT * from Employee
+
+Executing query: select * from Employee where emp_id = 'OWN540.004185014061'
++++++++addEmployee++++++
+
+Executing query: insert into Employee Values('SAL413.148262314061','-04-13T21:48:26.313','none','1200.0','1234567890','none','SAL')
+
+Executing query: SELECT * from Employee
+
+Executing query: select * from Employee where emp_name = '-04-13T21:48:26.313'
+
+Executing query: delete from Employee where emp_name = '-04-13T21:48:26.313'
++++++getEmployee+++++
+
+Executing query: insert into Employee Values('SAL306.148262314061','-04-13T21:48:26.603','none','1200.0','1234567890','none','SAL')
+
+Executing query: select * from Employee where emp_name = '-04-13T21:48:26.603'
+
+Executing query: select * from Employee where emp_name = '-04-13T21:48:26.603'
+
+Executing query: delete from Employee where emp_name = '-04-13T21:48:26.603'
++++++isSalesClerk+++++
+
+Executing query: SELECT * from Employee
+
+Executing query: select * from Employee where emp_id = 'SAL182.243250014061'
++++++isOwner+++++
+
+Executing query: SELECT * from Employee
+
+Executing query: select * from Employee where emp_id = 'OWN540.004185014061'
++++++addManager++++
+herere
+
+Executing query: select * from Employee where EMP_POSITION = 'MAN'
++++++isManager+++++
+
+Executing query: SELECT * from Employee
+
+Executing query: select * from Employee where emp_id = 'MAN283.351250014061'
++++++getManager+++++
+
+Executing query: select * from Employee where emp_position = 'MAN'
++++++getOwner++++++
+
+Executing query: select * from Employee where emp_position = 'OWN'
++++++getEmployeeList++++++
+
+Executing query: insert into Employee Values('SAL253.278412314061','-04-13T21:48:27.352','none','1200.0','1234567890','none','SAL')
+
+Executing query: SELECT * from Employee
+
+Executing query: select * from Employee where emp_name = '-04-13T21:48:27.352'
+
+Executing query: delete from Employee where emp_name = '-04-13T21:48:27.352'
++++++changeEmployee+++++
+
+Executing query: insert into Employee Values('SAL775.278412314061','27.577','none','1200.0','1234567890','none','SAL')
+
+Executing query: UPDATE Employee SET EMP_ID = 'SAL736.041321482761',EMP_NAME = '27.57727.577',ADDRESS = 'none',SALARY = '1200.0',PHONE_NO = '1234567890',EMAIL = 'none',EMP_POSITION = 'SAL' WHERE emp_name = '27.577'
+
+Executing query: select * from Employee where emp_name = '27.57727.577'
+passed
+
+Executing query: select * from Employee where emp_name = '27.57727.577'
+
+Executing query: delete from Employee where emp_name = '27.57727.577'
+
+------------- ---------------- ---------------
+Testsuite: Databases.InventoryDatabaseTest
+
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.54 sec
+
+------------- Standard Output ---------------
++++++searchBookInStock+++++
+
+Executing query: select copy_num from Stock where title = '2016-04-13T21:48:29.261' and author = '2016-04-13T21:48:29.2612016-04-13T21:48:29.261' and publisher = 'konami'
+
+Executing query: INSERT INTO stock values('ISBN072.298412314061','2016-04-13T21:48:29.261','2016-04-13T21:48:29.2612016-04-13T21:48:29.261','konami','12.0','12','12','12','12','12.0','japan','japan','1234567890')
+
+Executing query: select copy_num from Stock where title = '2016-04-13T21:48:29.261' and author = '2016-04-13T21:48:32.1242016-04-13T21:48:32.124' and publisher = 'konami'
+
+Executing query: INSERT INTO stock values('ISBN421.238412314061','2016-04-13T21:48:29.261','2016-04-13T21:48:32.1242016-04-13T21:48:32.124','konami','12.0','12','12','12','12','12.0','japan','japan','1234567890')
+
+Executing query: select * from Stock where title = '2016-04-13T21:48:29.261' 
+
+Executing query: select * from Stock where title = '2016-04-13T21:48:29.261' 
+
+Executing query: select copy_num from Stock where ISBN = 'ISBN072.298412314061'
+
+Executing query: delete from Stock where ISBN = 'ISBN072.298412314061'
+
+Executing query: select * from Stock where title = '2016-04-13T21:48:29.261' 
+
+Executing query: select copy_num from Stock where ISBN = 'ISBN421.238412314061'
+
+Executing query: delete from Stock where ISBN = 'ISBN421.238412314061'
+++++++removeBookInStock+++++++
+
+Executing query: select copy_num from Stock where title = '2016-04-13T21:48:32.701' and author = 'masashi' and publisher = 'konami'
+
+Executing query: INSERT INTO stock values('ISBN207.214832314061','2016-04-13T21:48:32.701','masashi','konami','12.0','12','12','12','12','12.0','japan','japan','1234567890')
+
+Executing query: select * from Stock where title = '2016-04-13T21:48:32.701' and author = 'masashi' and publisher = 'kodnami'
+
+Executing query: select * from Stock where title = '2016-04-13T21:48:32.701' 
+
+Executing query: select copy_num from Stock where ISBN = 'ISBN207.214832314061'
+
+Executing query: update Stock set copy_num = '2' where isbn = 'ISBN207.214832314061'
+
+Executing query: select * from Stock where title = '2016-04-13T21:48:32.701' 
+
+Executing query: select copy_num from Stock where ISBN = 'ISBN207.214832314061'
+
+Executing query: delete from Stock where ISBN = 'ISBN207.214832314061'
+++++++++addtoInventory++++++++
+
+Executing query: select * from Stock 
+
+Executing query: select copy_num from Stock where title = 'fairy tail' and author = 'hiro mashima' and publisher = 'konami'
+
+Executing query: update Stock set copy_num = '400' where title = 'fairy tail' and author = 'hiro mashima' and publisher = 'konami'
+
+Executing query: select * from Stock where title = 'fairy tail' and author = 'hiro mashima' and publisher = 'konami'
+
+Executing query: select * from Stock where isbn = 'ISBN018.160410091226'
+400--->400
+
+Executing query: select * from Stock where isbn = 'ISBN018.160410091226'
+
+Executing query: select copy_num from Stock where ISBN = 'ISBN018.160410091226'
+
+Executing query: update Stock set copy_num = '200' where isbn = 'ISBN018.160410091226'
+
+Executing query: commit
+++++++changeBookInStock+++++++
+
+Executing query: select copy_num from Stock where title = '2016-04-13T21:48:33.751' and author = 'masashi' and publisher = 'konami'
+
+Executing query: INSERT INTO stock values('ISBN157.214833314061','2016-04-13T21:48:33.751','masashi','konami','12.0','12','12','12','12','12.0','japan','japan','1234567890')
+
+Executing query: select * from Stock where title = '2016-04-13T21:48:33.751' 
+
+Executing query: UPDATE stock SET ISBN = 'ISBN649.413214833061',title = '2016-04-13T21:48:33.751rick',author = 'masashi',publisher= 'konami',cost_price= '12.0',copies_sold= '12',copy_num= '12',days_to_procure= '12',rack_num= '12',sell_price= '12.0',vendor_name = 'japan',vendor_add = 'japan',vendor_phone= '1234567890' WHERE ISBN = 'ISBN157.214833314061'
+
+Executing query: select * from Stock where isbn = 'ISBN649.413214833061'
+
+Executing query: select copy_num from Stock where ISBN = 'ISBN649.413214833061'
+
+Executing query: delete from Stock where ISBN = 'ISBN649.413214833061'
+addToRequests
+
+Executing query: select * from requests where title = '2016-04-13T21:48:34.143' 
+
+Executing query: INSERT INTO requests values('2016-04-13T21:48:34.143','','','12.0','1')
+
+Executing query: select * from requests where title = '2016-04-13T21:48:34.143' 
+
+Executing query: delete from Requests where title = '2016-04-13T21:48:34.143'
+++++++searchBookNotInStock+++++
+
+Executing query: select * from requests where title = '2016-04-13T21:48:34.437' 
+
+Executing query: INSERT INTO requests values('2016-04-13T21:48:34.437','','','12.0','1')
+
+Executing query: select * from requests where title = '2016-04-13T21:48:34.437' 
+
+Executing query: delete from Requests where title = '2016-04-13T21:48:34.437'
++++++++getBooksBelowThreshold+++++++
+
+Executing query: select copy_num from Stock where title = '2016-04-13T21:48:34.732' and author = 'masashi' and publisher = 'konami'
+
+Executing query: INSERT INTO stock values('ISBN237.132148344061','2016-04-13T21:48:34.732','masashi','konami','12.0','12','12','12','12','12.0','japan','japan','1234567890')
+
+Executing query: select * from Stock where copy_num < '13'
+
+Executing query: select copy_num from Stock where ISBN = '2016-04-13T21:48:34.732'
+
+Executing query: select * from Stock where title = '2016-04-13T21:48:34.732' 
+
+Executing query: select copy_num from Stock where ISBN = 'ISBN237.132148344061'
+
+Executing query: delete from Stock where ISBN = 'ISBN237.132148344061'
+------------- ---------------- ---------------
+Testsuite: Databases.SalesDatabaseTest
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.463 sec
+
+------------- Standard Output ---------------
+this will delete all the data in databases...
+
+Executing query: insert into Sales values('TRN292264050014062','ISBN412.410182452061',4,'10-APR-16','rick','none','ridk',1234567890,'SAL182.243250014061')
+getTransaction
+
+Executing query: select * from Stock where isbn = 'ISBN412.410182452061'
+
+Executing query: select * from Sales where trans_id = 'TRN292264050014062'
+
+Executing query: select * from Stock where isbn = 'ISBN412.410182452061'
+
+Executing query: delete from Sales where trans_id = 'TRN292264050014062'
+------------- ---------------- ---------------
+test-report:
+test:
+BUILD SUCCESSFUL (total time: 18 seconds)
